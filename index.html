@@ -1,0 +1,60 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <img src="dungenii.gif">
+        <h1>Make your choice.</h1>
+        <div id="factDisplay"></div>
+        <div>---</div>
+        <h2 id="main-text">text</h2>
+        <h2 id="gen-text">Generation (Click one of the Gen buttons to generate something!)</h2>
+        <div>---</div>
+        <p>[ Mechanics RNG ]</p>
+        <button id="oracle-btn" onclick="oracle()">Oracle</button>
+        <button id="Intervention-btn" onclick="intervent()">Interventions</button>
+        <button id="rwg-btn" onclick="rwg()">RWG</button>
+        <button id="expect-btn" onclick="expect()">Expects</button>
+        <br><button id="percep-btn" onclick="perception()">Perception</button>
+        <button id="trap-btn" onclick="trap()">Trap Detection</button>
+        <button id="travel-btn" onclick="travBiome()">World Biome</button>
+        <button id="cave-btn" onclick="cavBiome()">Cave Biome</button>
+        <br><button id="item-btn" onclick="genItem()">Rnd Item</button>
+        <button id="armor-btn" onclick="genArmor()">Rnd Armor</button>
+        <button id="weapon-btn" onclick="genWeapon()">Rnd Weapon</button>
+        <button id="treasure-btn" onclick="genTreasure()">Rnd Treasure</button>
+        <br><button id="easy-btn" onclick="easyTrap()">Normal Trap</button>
+        <button id="hard-btn" onclick="deadlyTrap()">Deadly Trap</button>
+        <!-- Gen buttons -->
+        <div>---</div>
+        <p>[ Generate Things ]</p>
+        <button id="room-btn" onclick="genroom()">Gen Room</button>
+        <button id="town-btn" onclick="gentown()">Gen Town</button>
+        <button id="struct-btn" onclick="genstructure()">Gen Structure</button>
+        <br><button id="npc-btn" onclick="npct()">Gen NPC</button>
+        <button id="weather-btn" onclick="weather()">Gen Weather</button>
+        <!-- Boss buttons -->
+        <div>---</div>
+        <p>[ Generate Boss Loot based on Difficulty ]</p>
+        
+        <button id="boss-btn" onclick="easyBoss()">Normal Boss</button>
+        <button id="boss-btn" onclick="hardBoss()">Hard Boss</button>
+        <button id="boss-btn" onclick="mythBoss()">Legendary Boss</button>
+        <!-- Bottom Stuff -->
+        <div>---</div>
+        <p>[ Set Dungeon Biome ]</p>
+        <form>
+            <label for="dunbio">Dungeon Biome:</label>
+            <select name="DunOps" id="dunbio">
+                <option value="volcanic">Volcanic</option>
+                <option value="ice">Ice</option>
+                <option value="desert">Desert</option>
+                <option value="water">Water</option>
+                <option value="none">(None)</option>
+            </select>
+        </form>
+        <button type="button" id="assholes" onclick="assholes()">Submit</button>
+        <p class="footer">Made by TigerBonez | ⭐ = Original Magic Item, 🌌 = Vanilla Magic Item</p>
+        <script src="index.js"></script>
+    </body>
+</html>
