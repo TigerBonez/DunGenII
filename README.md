@@ -5,3 +5,5 @@ Uses many resources found in official Dungeon & Dragons books, such as the Playe
 Also uses an oracle system directly based off of "MUNE", a solo D&D DM emulator.
 
 This is meant to be a private project for a few friends and I, but I wanted to see if I can host the files as a website using github, which requires it to be listed as public. If you end up using this, be sure to support the original sources this is based on.
+
+I have no clue if "DunGen" is a thing already, it's just a cool name we thought of, and the "II" part is because this one actually has a UI and isn't text-based.
