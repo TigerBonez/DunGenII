@@ -7,10 +7,12 @@ function randomNumber(min, max) {
 }
 
 // Lists
-const OracleList = ["🚫 Absolute no", "❗ No, and intervention", "❌ No", "🎈 No, but...", "🎈 Yes, but...", "✔ Yes", "❗ Yes, and intervention", "✅ Absolute yes"];
+const OracleList = ["🚫 Absolute no\nWhat you asked will NOT happen any time soon.", "❗ No, and intervention\nNo, and something intervenes with the moment.",
+"❌ No", "🎈 No, but...\nNo, though something isn't usual, ask a followup question.", "🎈 Yes, but...\nYes, though something isn't usual, ask a followup quesion",
+"✔ Yes", "❗ Yes, and intervention\nYes, and something intervenes with the moment.", "✅ Absolute yes\nWhat you asked will most certainly happen to extreme effect."];
 
-const Interventions = ["➕ New Entity", "🔼 Entity Positive", "🔽 Entity Negative", "✨ Party Positive", "🧨 Party Negative", "📜 Advance Plot", "📜 Regress Plot", "🃏 Wildcard (Use RWG)",
-"🎎 Remote Event"];
+const Interventions = ["➕ New Entity", "🔼 Entity Positive", "🔽 Entity Negative", "✨ Party Positive", "🧨 Party Negative", "📜 Advance Plotpoint or Quest", "📜 Obstacle in Plotpoint or Quest", 
+"🃏 Wildcard (Use RWG)", "🎎 Remote Event"];
 
 const rwgAction = ["Attainment", "Starting", "Negclect", "Fight", "Recruit", "Triumph", "Release", "Befriend", "Judge", "Desert", "Dominate", "Procrastinate", "Expose", "Haggle", "Imprison",
 "Release", "Celebrate", "Develop", "Oppress", "Inspect", "Ambush", "Spy", "Attach", "Carry", "Excitement","Activity", "Assist", "Care", "Negligence", "Passion", "Violate", "Oppose",
@@ -146,11 +148,14 @@ const npcRareRaces = ["Dragonborn (Black)", "Dragonborn (Brass)", "Dragonborn (B
 "Viashino", "Warforged", "Wolfborn", "Yuan-Ti"];
 
 const npcClasses = ["⚒ Barbarian", "🎸 Bard", "💊 Cleric", "🌳 Druid", "⚔ Fighter", "🤛 Monk", "🌩 Paladin", "🏹 Ranger", "🔪 Rogue", "🔥 Sorcerer", "👁 Warlock", "📜 Wizard", "⚙ Artificer",
-"🩸 Blood Hunter", "🔮 Mystic"];
+"🩸 Blood Hunter", "🔮 Mystic", "🚗 Artificer: Greaser", "🚗 Barbarian: Athlete", "🚗 Rogue: Gambler", "🚗 Rogue: Skater", "🚗 Wizard: Cybermancy"];
 
 const npcVisuals = ["Distinctive jewelry", "Piercings", "Flamboyant or Outlandish clothes", "Formal, clean clothes", "Ragged, dirty clothes", "Pronounced Scar", "Missing Teeth", "Missing Fingers",
 "Unusual Eye Color", "Tattoos", "Birthmark", "Unusual skin color", "BALD BALD", "Braided Beard or Hair", "Unusual Hair Color", "Nervous eye twitch", "Distinctive nose", "Distinctive posture",
 "Exceptionally beautiful", "Exceptionally ugly"];
+
+const npcPersonalities = ["Flirtatious", "Curious", "Nervous", "Vulgar", "Gentle", "Snobbish", "Generous", "Pessimistic", "Secretive", "Barbaric", "Friendly", "Intellectual", "Humorless", "Gloomy",
+"Careless", "Honest", "Proud", "Optimistic", "Cruel", "Cheerful"];
 
 const alignment = ["🛡 Lawful Good", "🛡 Neutral Good", "🛡 Chaotic Good", "✨ Lawful Neutral", "✨ True Neutral", "✨ Chaotic Neutral", "👿 Lawful Evil", "👿 Neutral Evil", "👿 Chaotic Evil"];
 
@@ -165,14 +170,19 @@ const randomItems = ["Abacus", "Vial (Acid)", "Flask (Alchemist's Fire)", "10 Ar
 "Lyre", "Horn", "Pan Flute", "Shawn", "Viol", "Gem (Azurite)", "Gem (Quartz)", "Gem (Agate)", "Gem (Lapis Lazuli)", "Gem (Malachite)", "Gem (Obsidian)", "Gem (Bloodstone)", "Gem (Citrine)",
 "Gem (Jasper)", "Gem (Moonstone)", "Gem (Onyx)", "Gem (Zircon)", "Gem (Amethyst)", "Gem (Garnet)", "Gem (Pearl)", "Gem (Spinel)", "Gem (Peridot)", "Gem (Sapphire)", "Gem (Emerald)",
 "Gem (Ruby)", "Gem (Diamond)", "Copper Ring", "Silver Ring", "Gold Ring", "Platinum Ring", "Copper Amulet", "Silver Amulet", "Gold Amulet", "Platinum Amulet", "Gold Crown", "Silver Gauntlets",
-"Platinum Trophy", "Copper Chains",];
+"Platinum Trophy", "Copper Chains", "🚗 Screwdriver", "🚗 Glowstick", "🚗 Lighter", "🚗 Flashlight", "🚗 Binoculars", "🚗 Soldering Gun", "🚗 5 ft Copper Wire", "🚗 Wire Cutters",
+"🚗 5 cotton swabs", "🚗 Glass beaker", "🚗 Small Camera (Broken)", "🚗 Small Camera (Unused)", "🚗 Airhorn", "🚗 Battery", "🚗 Empty Briefcase", "🚗 Fake ID", "🚗 Fishing Tackle",
+"🚗 Handcuffs", "🚗 Metal Detector", "🚗 Pepper spray", "🚗 Signal Flare", "🚗 Stopwatch", "🚗 USB Flash Drive", "🚗 Wristwatch", "🚗 10 Zip-ties"];
 
 const randomArmor = ["Light Armor (Padded)", "Light Armor (Leather)", "Light Armor (Studded Leather)", "Medium Armor (Hide)", "Medium Armor (Chain Shirt)", "Medium Armor (Scale Mail)",
-"Medium Armor (Breastplate)", "Medium Armor (Halfplate)", "Heavy Armor (Ringmail)", "Heavy Armor (Chainmail)", "Heavy Armor (Splint)", "Heavy Armor (Plate)", "Shield"];
+"Medium Armor (Breastplate)", "Medium Armor (Halfplate)", "Heavy Armor (Ringmail)", "Heavy Armor (Chainmail)", "Heavy Armor (Splint)", "Heavy Armor (Plate)", "Shield",
+"🚗 Light Armor (Leather Jacket)", "🚗 Light Armor (Undercover Vest)", "🚗 Medium Armor (Tactical Vest)", "🚗 Heavy Armor (Bulletproof Vest)", "🚗 Riot Shield"];
 
 const randomWeapons = ["Club", "Dagger", "Greatclub", "Handaxe", "Javelin", "Light Hammer", "Mace", "Quarterstaff", "Sickle", "Spear", "Light Crossbow", "Dart", "Shortbow", "Sling",
 "Battleaxe", "Flail", "Glaive", "Greataxe", "Greatsword", "Halberd", "Lance", "Longsword", "Maul", "Morningstar", "Pike", "Rapier", "Scimitar", "Shortsword", "Trident", "War pick",
-"Warhammer", "Whip", "Blowgun", "Hand Crossbow", "Heavy Crossbow", "Longbow", "Net"];
+"Warhammer", "Whip", "Blowgun", "Hand Crossbow", "Heavy Crossbow", "Longbow", "Net", "🚗 Baseball Bat", "🚗 Baton", "🚗 Brass Knuckles", "🚗 Hunting Knife", "🚗 Nunchaku",
+"🚗 Pocket Knife", "🚗 Pistol", "🚗 Revolver", "🚗 Hunting Rifle", "🚗 Taser", "🚗 Chainsaw", "🚗 Katana", "🚗 Machine Gun (Light)", "🚗 Sniper Rifle",
+"🚗 Shotgun", "🚗 10 Bullets"];
 
 const randomTreasure = ["⭐ Potion of Full Recovery", "🌌 Spell Scroll (5 uses)", "🌌 Driftglobe", "🌌 Bag of holding", "⭐ Greater Spell Scroll (7 uses)", "⭐ Adamantine Shield", 
 "🌌 Decanter of Endless Water", "🌌 Alchemy Jug", "🌌 Amulet of Health", "🌌 Amulet of Proof against Detection and Location", "🌌 Amulet of the Planes", "🌌 Animated Shield", 
@@ -205,12 +215,11 @@ const randomTreasure = ["⭐ Potion of Full Recovery", "🌌 Spell Scroll (5 use
 "🌌 Stone of Good Luck", "🌌 Sun Blade", "🌌 Sword of Life Stealing", "🌌 Sword of Sharpness", "🌌 Sword of Wounding", "🌌 Tentacle Rod", "🌌 Tome of Clear Thought",
 "🌌 Tome of Leadership and Influence", "🌌 Tome of Understanding", "🌌 Trident of Fish Command", "🌌 Universal Solvent", "🌌 Vicious Weapon", "🌌 Wand of Binding",
 "🌌 Wand of Enemy Detection", "🌌 Wand of Fear", "🌌 Wand of Fireballs", "🌌 Wand of Lightning Bolts", "🌌 Wand of Magic Detection", "🌌 Wand of Magic Missiles", "🌌 Wand of Paralysis",
-"🌌 Wand of Polymorph", "🌌 Wand of Secrets", "🌌 Wand of the War Mage", "🌌 Wand of Web", "🌌 Wand of Wonder", "🌌 Weapon of Warning", "🌌 Wind Fan", "🌌 Winged Boots", "🌌 Wings of Flying"];
+"🌌 Wand of Polymorph", "🌌 Wand of Secrets", "🌌 Wand of the War Mage", "🌌 Wand of Web", "🌌 Wand of Wonder", "🌌 Weapon of Warning", "🌌 Wind Fan", "🌌 Winged Boots", "🌌 Wings of Flying",
+"🚗 Computer (Laptop)", "🚗 Computer (Smartphone)"];
 
-const legendaryTreasure = ["⭐ Feather of Resurrection (3 uses)", "⭐ Master Spell Scroll (Infinite Uses)", "🌌 Armor of Invulnerability", "⭐ Skeleton Key (Infinite Uses)",
-"⭐ Superior Crystal Ball", "🌌 Cubic Gate", "🌌 Daen's Instant Fortress", "🌌 Helm of Brilliance", "🌌 Ring of Elemental Command", "⭐ Wishing Ring", "🌌 Robe of Stars",
-"🌌 Rod of Lordly Might", "🌌 Rod of Security", "🌌 Sphere of Annihilation", "🌌 Talismen of Pure Good", "🌌 Talismen of Ultimate Evil", "🌌 Well of Many Worlds", 
-"⭐ Time God's Fragment", "⭐ Space God's Fragment", "⭐ Mind God's Fragment", "⭐ Power God's Fragment", "⭐ Soul God's Fragment", "⭐ Reality God's Fragment"];
+const legendaryTreasure = ["🌌 Armor of Invulnerability", "🌌 Cubic Gate", "🌌 Daen's Instant Fortress", "🌌 Helm of Brilliance", "🌌 Ring of Elemental Command","🌌 Robe of Stars",
+"🌌 Rod of Lordly Might", "🌌 Rod of Security", "🌌 Sphere of Annihilation", "🌌 Talismen of Pure Good", "🌌 Talismen of Ultimate Evil", "🌌 Well of Many Worlds"];
 
 const weatherTemp = ["Normal Temperature for Biome/Season", "Colder than usual", "Warmer than usual"];
 
@@ -229,16 +238,91 @@ const hardTraps = ["The room opens into a long hallway, a wall of spikes begins 
 "All exits lock up and the room floods with water quickly", "An object in the room explodes violently", "Floor opens up and drops the party into a room with a powerful monster",
 "Flamethrowers from the walls", "Magic seal slowly steals the life of the party", "An eye opens and petrifies any whose faces it can see", "Doppelgangars of the party appear to block the path"];
 
+const ancientFeatures = ["Evidence of lost knowledge", "Inscrutable relics", "Ancient artistry or craft", "Preserved corpses or fossils", "Visions of this place in another time"];
+const ancientDangers = ["Ancient trap (use trap generator)", "Hazardous architecture or terrain", "Blocked or broken path", "Object defended by guardian", "Ancient monster lost to time",
+"Warnings of a long-buried danger", "Artifact of terrible meaning or power", "Disturbing evidence of ancient wrongs"];
+const corruptedFeatures = ["Mystic focus or conduit", "Strange environmental disturbances", "Mystic runes or markings", "Blight or decay", "Evidence of a foul ritual"];
+const corruptedDangers = ["Creature spawned from dark power", "Creature that controls dark power", "Corruption-inducing trap", "Revelations of a terrible truth", "Mystic trap or trigger",
+"Mystic barrier or ward", "Illusions lead you astray (Perception check)", "Dark ritual in progress", "Lingering effects of a dark ritual"];
+const fortifiedFeatures = ["Camp or quarters", "Guarded location", "Storage or repository", "Work or training area", "Command center"];
+const fortifiedDangers = ["Patrolled area", "Guarded area", "Ambush! (Only if you've been made aware of before)", "Pets or tamed monsters", "Trap", "Alarm Trigger", "Nefarious plans revealed"];
+const hallowedFeatures = ["Altar", "Offerings or atonements", "Religious relic or idol", "Consecrated ground", "Dwellings or gathering place"];
+const hallowedDangers = ["Divine manifestations", "Embodiment of a god or myth", "Protective ward or barrier", "Prophecies of a dark fate"];
+const hauntedFeatures = ["Tomb or burial site", "Spilled blood", "Dried blood or remains", "Unnatural mist or darkness", "Messages from beyond the grave", "Apparitions of a person or event"];
+const hauntedDangers = ["Area haunted by entity", "Unsettling sounds or foreboding signs", "Entity attacks without warning", "Frightening visions", "The environment is used against you",
+"Trickery leads you astray (Insight Check)", "Sudden, shocking manifestation"];
+const infestedFeatures = ["Inhabited nest", "Abandoned nest", "Ravaged terrain or architecture", "Remains or carrion", "Hoarded food"];
+const infestedDangers = ["Creatures swarm and attack", "Toxic environment", "Creature stalks you (Perception check)", "Creature blocks path", "Trap or snare", "Remains of a victim"];
+const ravagedFeatures = ["Path of destruction", "Abandoned or ruined dwelling", "Untouched or preserved area", "Traces of what was lost", "Ill-fated victims"];
+const ravagedDangers = ["Precarious", "Imminent collapse or destruction", "Path undermined", "Blocked or broken path", "Vestiges of a destructive force", "Unexpected environmental threat",
+"Signs of a horrible fate"];
+const wildFeatures = ["Creature's lair", "Territorial markings", "Impressive flora or fauna", "Hunting ground or watering hole", "Remains or carrion"];
+const wildDangers = ["Hunting creature", "Sudden attack from creature", "Creature with unexpected abilities", "Creature protecting something", "Hazardous terrain", "Weather or environmental threat",
+"Benign aspect becomes a threat", "Remains of a victim", "Ill-fated victim"];
+const barrowFeatures = ["Burial chambers", "Maze of narrow passages", "Shrine", "Vault", "Offerings to the dead", "Statues", "Unburied remains", "Mass grave", "Exhumed corpses", "Transition into new domain"];
+const barrowDangers = ["Guarded area", "Trap", "Death makes it's presence known", "Crumbling architecture", "Grave goods with hidden dangers"];
+const cavernFeatures = ["Twisting passages", "Cramped caves", "Vast chamber", "Subterranean waterway", "Cave pool", "Natural bridge", "Towering stone formation", "Natural illumination",
+"Dark pit", "Something unusual", "Mining area"];
+const cavernDangers = ["Creature lair", "Cave-in", "Flooding", "Perilous climb or descent", "Fissure or sinkhole"];
+const frozenCavernFeatures = ["Mazy of Icy Tunnels", "Glistening cave", "Vast chamber", "Frigid waterway", "Icy Pools", "Magnificent ice formations", "Forzen waterfall", "Deep crevasses",
+"Discovery locked in the ice", "Something unusual"];
+const frozenCavernDangers = ["Creature lair", "Fracturing ice", "Crumbling chasm", "Bitter chill", "Disorienting reflections"];
+const pathFeatures = ["Winding mountain path", "Snowfield or glacial rocks", "River gorge", "Crashing waterfall", "Highland lake", "Forgotten cairn", "Bridge", "Overlook", "Camp or outpost",
+"Something unusual"];
+const pathDangers = ["Creature lair", "Perilous climb or descent", "Avalanche or rockslide", "Weather starts/stops"];
+const ruinFeatures = ["Crumbling corridors and chambers", "Collapsed architecture", "Rubble-choked hall", "Courtyard", "Archive or library", "Broken statues or fading murals", "Preserved vault",
+"Altar of forgotten gods", "Mausoleum", "Something unusual"];
+const ruinDangers = ["Ancient mechanism or trap", "Collapsing wall or ceiling", "Blocked or broken passage", "Unstable floor above a new danger", "Ancient secrets best left buried"];
+const seaCaveFeatures = ["Watery tunnels", "Eroded chamber", "Flooded chamber", "Vast chamber", "Dry passages", "Freshwater inlet", "Rocky island", "Watery debris", "Shipwreck or boat",
+"Something unusual"];
+const seaCaveDangers = ["Something lurks below", "Flooding", "Rushing current", "Claustrophobic squeeze"];
+const marshFeatures = ["Narrow path through dank bog", "Stagnant waterway", "Flooded thicket", "Island of dry land", "Submerged discovery", "Preserved corpses", "Overgrown structure",
+"Tall reeds", "Camp or outpost", "Something unusual"];
+const marshDangers = ["Deep water blocks the path", "Toxic environment", "Concealing or disorienting mist (Constitution check)", "Hidden quagmire"];
+const strongholdFeatures = ["Connecting passageways", "Barracks or commonquarters", "Large hall", "Workshop or library", "Command center", "Storage", "Kitchen", "Courtyard", "Treasury"];
+const strongholdDangers = ["Blocked or guarded path", "Caught in the open", "Chokepoint", "Trap", "Alarm trigger"];
+const darkWoodsFeatures = ["Dense thicket", "Overgrown path", "Waterway", "Clearing", "Elder Tree", "Brambles", "Overgrown structure", "Rocky outcrop", "Camp or outpost", "Something unexpected"];
+const darkWoodsDangers = ["Creature lair", "Trap or snare", "Path leads you astray", "Entangling plants"];
+const underDungeonFeatures = ["Carved passages", "Hall or Chamber", "Stairs into the depths", "Grand doorway or entrance", "Tomb or catacombs", "Rough-hewn cave", "Foundry or workshop",
+"Shrine", "Imposing architecture or artistry", "Something unusual"];
+const underDungeonDangers = ["Ancient mechanism or trap", "Crumbling architecture", "Blocked or broken passage", "Artifact with a hidden danger", "Hidden monster"];
+const magmaFeatures = ["Exposed ore", "Cooled chamber", "Obsidian pillars", "Charred remains", "Lavafall", "Something unusual"];
+const magmaDangers = ["Lavaflow", "Rigid terrain", "Unstable ground", "Extremely hot area", "Path blocked by hot stones"];
+const sunkenFeatures = ["Flooded halls", "Dry passages", "Ancient architecture", "Fully submerged room", "Old relics", "Something unusual"];
+const sunkenDangers = ["Creature lair", "Blocked or broken passage", "Brittle architecture", "Something lurks beneath"];
+const skyboundFeatures = ["Floating objects", "Network of bridges", "Lightened gravity", "Round room", "Otherworldly writings"];
+const skyboundDangers = ["Endless pitfall", "Cloudy room (Perception check)", "Area of reversed gravity", "Moving platforms", "3 dimensional trap"];
+const otherworldlyFeatures = ["Large alien plantlife", "Bridges made of strange energy", "Small floating islands or platforms", "Otherworldly writings", "Twisted and confusing architecture",
+"A portal to a random nearby location (DM's discression)", "Area of layered ledges or cliffs", "Geyser of energy that launches things upward", "Area of otherworldly energy and presence",
+"Altered gravity"];
+const otherworldlyDangers = ["Area of crushing gravity", "Area twists and turns as if it were alive", "Invisible walls", "Rogue portal transports you elsewhere nearby (DM's discression)",
+"Unstable terrain", "Otherworldly creature's lair"];
+const technologicalFeatures = ["Holographic images floating around the area", "Screens display strange text", "Loud machines", "Security cameras", "Conveyor belts line the floor",
+"A network of catwalks", "Glass walls peering into another room", "Server room"];
+const technologicalDangers = ["Laser trap", "Grinding machine at the bottom of a pit", "Alarm", "Electric poles line the room", "Loose wires", "Spilled chemicals"];
+
+var domainType = 10;
+
 (function newFact() {
     var randomFact = Math.floor(Math.random() * randomQuote.length);
     document.getElementById('factDisplay').innerHTML = randomQuote[randomFact];
   })();
 // ---------- FUNCTIONS ----------
 
+// Copy window text to clipboard
+function copytext() {
+    var range = document.createRange();
+    range.selectNode(document.getElementById("gen-text"));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+};
+
 // Oracle
 function oracle() {
     var OracleSays = OracleList[Math.floor(Math.random()*OracleList.length)];
-    document.getElementById("main-text").innerText = OracleSays;
+    document.getElementById("main-text").innerText = `The Oracle says: ${OracleSays}`;
 };
 
 // Intervention
@@ -260,7 +344,7 @@ function expect() {
     document.getElementById("main-text").innerText = expectResults;
 }
 
-// Dungeon Biome Setting
+// Dungeon Biome Setting - DEPRECATED
 function assholes() {
     var value = e.value;
     if (value === "volcanic") {
@@ -329,24 +413,290 @@ function trap() {
     }
 }
 
+// Journey Length
+function journeygen() {
+    var journeyDays = randomNumber(1, 3);
+    var destinationArrive = randomNumber(0, 3);
+    var travelResults = travelBiomes[Math.floor(Math.random()*travelBiomes.length)];
+    var tempResults = weatherTemp[Math.floor(Math.random()*weatherTemp.length)];
+    var windResults = weatherWind[Math.floor(Math.random()*weatherWind.length)];
+    var cloudResults = weatherClouds[Math.floor(Math.random()*weatherClouds.length)];
+
+    if (destinationArrive === 1) {
+        var destinationSuccess = "You'll reach your destination at this checkpoint.";
+    } else {
+        var destinationSuccess = "Take another journey to the next checkpoint.";
+    };
+
+    // Print
+    document.getElementById("gen-text").innerText = `🐫 Days until next checkpoint: ${journeyDays}
+    🗾 Destination status: ${destinationSuccess}
+    🌳 Traveled Biome: ${travelResults}
+    
+    Journey Weather:
+    🌞 Temperature: ${tempResults}
+    💨 Wind: ${windResults}
+    ⛅ Clouds: ${cloudResults}`
+}
+
+// A shit ton of domains holy fuck
+function domainAncient() {
+    globalThis.domainType = 1;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainCorrupted() {
+    globalThis.domainType = 2;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainFortified() {
+    globalThis.domainType = 3;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainHallowed() {
+    globalThis.domainType = 4;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainHaunted() {
+    globalThis.domainType = 5;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainInfested() {
+    globalThis.domainType = 6;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainRavaged() {
+    globalThis.domainType = 7;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainWild() {
+    globalThis.domainType = 8;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainBarrow() {
+    globalThis.domainType = 9;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainCavern() {
+    globalThis.domainType = 10;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainFrozenCavern() {
+    globalThis.domainType = 11;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainPass() {
+    globalThis.domainType = 14;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainRuin() {
+    globalThis.domainType = 15;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainSeaCave() {
+    globalThis.domainType = 16;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainMarsh() {
+    globalThis.domainType = 17;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainStronghold() {
+    globalThis.domainType = 18;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainDarkWoods() {
+    globalThis.domainType = 19;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainUnderDungeon() {
+    globalThis.domainType = 20;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainMagma() {
+    globalThis.domainType = 21;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainSunken() {
+    globalThis.domainType = 22;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainSkybound() {
+    globalThis.domainType = 23;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainOtherworldly() {
+    globalThis.domainType = 24;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+function domainTechnological() {
+    globalThis.domainType = 25;
+    document.getElementById("main-text").innerText = `Domain set to ID ${domainType}`
+    console.log(domainType);
+}
+
 // Room Generation
 function genroom() {
-    var gridX = randomNumber(1, 10);
-    var gridY = randomNumber(1, 10);
+    var gridX = randomNumber(1, 15);
+    var gridY = randomNumber(1, 15);
     var monsterChance = randomNumber(1,5);
-    var dangerChance = randomNumber(1, 3);
+    var dangerChance = randomNumber(1, 8);
     var treasureChance = randomNumber(1, 10);
     var upstairsChance = randomNumber(1, 8);
     var downstairsChance = randomNumber(1, 8);
     var bossChance = randomNumber(1, 25);
     var poiChance = randomNumber(1, 3);
     var poiCount = randomNumber(1, 3);
+    var dungeonSetting = null;
+    // Shit ton of domain things randomized. F = feature, D = danger.
+    var ancientResF = ancientFeatures[Math.floor(Math.random()*ancientFeatures.length)];
+    var ancientResD = ancientDangers[Math.floor(Math.random()*ancientDangers.length)];
+    var corruptedResF = corruptedFeatures[Math.floor(Math.random()*corruptedFeatures.length)];
+    var corruptedResD = corruptedDangers[Math.floor(Math.random()*corruptedDangers.length)];
+    var fortifiedResF = fortifiedFeatures[Math.floor(Math.random()*fortifiedFeatures.length)];
+    var fortifiedResD = fortifiedDangers[Math.floor(Math.random()*fortifiedDangers.length)];
+    var hallowedResF = hallowedFeatures[Math.floor(Math.random()*hallowedFeatures.length)];
+    var hallowedResD = hallowedDangers[Math.floor(Math.random()*hallowedDangers.length)];
+    var hauntedResF = hauntedFeatures[Math.floor(Math.random()*hauntedFeatures.length)];
+    var hauntedResD = hauntedDangers[Math.floor(Math.random()*hauntedDangers.length)];
+    var infestedResF = infestedFeatures[Math.floor(Math.random()*infestedFeatures.length)];
+    var infestedResD = infestedDangers[Math.floor(Math.random()*infestedDangers.length)];
+    var ravagedResF = ravagedFeatures[Math.floor(Math.random()*ravagedFeatures.length)];
+    var ravagedResD = ravagedDangers[Math.floor(Math.random()*ravagedDangers.length)];
+    var wildResF = wildFeatures[Math.floor(Math.random()*wildFeatures.length)];
+    var wildResD = wildDangers[Math.floor(Math.random()*wildDangers.length)];
+    var barrowResF = barrowFeatures[Math.floor(Math.random()*barrowFeatures.length)];
+    var barrowResD = barrowDangers[Math.floor(Math.random()*barrowDangers.length)];
+    var cavernResF = cavernFeatures[Math.floor(Math.random()*cavernFeatures.length)];
+    var cavernResD = cavernDangers[Math.floor(Math.random()*cavernDangers.length)];
+    var frozenResF = frozenCavernFeatures[Math.floor(Math.random()*frozenCavernFeatures.length)];
+    var frozenResD = frozenCavernDangers[Math.floor(Math.random()*frozenCavernDangers.length)];
+    var pathResF = pathFeatures[Math.floor(Math.random()*pathFeatures.length)];
+    var pathResD = pathDangers[Math.floor(Math.random()*pathDangers.length)];
+    var ruinResF = ruinFeatures[Math.floor(Math.random()*ruinFeatures.length)];
+    var ruinResD = ruinDangers[Math.floor(Math.random()*ruinDangers.length)];
+    var seaResF = seaCaveFeatures[Math.floor(Math.random()*seaCaveFeatures.length)];
+    var seaResD = seaCaveDangers[Math.floor(Math.random()*seaCaveDangers.length)];
+    var marshResF = marshFeatures[Math.floor(Math.random()*marshFeatures.length)];
+    var marshResD = marshDangers[Math.floor(Math.random()*marshDangers.length)];
+    var strongholdResF = strongholdFeatures[Math.floor(Math.random()*strongholdFeatures.length)];
+    var strongholdResD = strongholdDangers[Math.floor(Math.random()*strongholdDangers.length)];
+    var darkResF = darkWoodsFeatures[Math.floor(Math.random()*darkWoodsFeatures.length)];
+    var darkResD = darkWoodsDangers[Math.floor(Math.random()*darkWoodsDangers.length)];
+    var underResF = underDungeonFeatures[Math.floor(Math.random()*underDungeonFeatures.length)];
+    var underResD = underDungeonDangers[Math.floor(Math.random()*underDungeonDangers.length)];
+    var magmaResF = magmaFeatures[Math.floor(Math.random()*magmaFeatures.length)];
+    var magmaResD = magmaDangers[Math.floor(Math.random()*magmaDangers.length)];
+    var sunkenResF = sunkenFeatures[Math.floor(Math.random()*sunkenFeatures.length)];
+    var sunkenResD = sunkenDangers[Math.floor(Math.random()*sunkenDangers.length)];
+    var skyboundResF = skyboundFeatures[Math.floor(Math.random()*skyboundFeatures.length)];
+    var skyboundResD = skyboundDangers[Math.floor(Math.random()*skyboundDangers.length)];
+    var otherResF = otherworldlyFeatures[Math.floor(Math.random()*otherworldlyFeatures.length)];
+    var otherResD = otherworldlyDangers[Math.floor(Math.random()*otherworldlyDangers.length)];
+    var techResF = technologicalFeatures[Math.floor(Math.random()*technologicalFeatures.length)];
+    var techResD = technologicalDangers[Math.floor(Math.random()*technologicalDangers.length)];
+
+    if (dangerChance === 1) {
+        if (domainType === 1) {
+            var dangerFinal = ancientResD;
+        }
+        if (domainType === 2) {
+            var dangerFinal = corruptedResD;
+        }
+        if (domainType === 3) {
+            var dangerFinal = fortifiedResD;
+        }
+        if (domainType === 4) {
+            var dangerFinal = hallowedResD;
+        }
+        if (domainType === 5) {
+            var dangerFinal = hauntedResD;
+        }
+        if (domainType === 6) {
+            var dangerFinal = infestedResD;
+        }
+        if (domainType === 7) {
+            var dangerFinal = ravagedResD;
+        }
+        if (domainType === 8) {
+            var dangerFinal = wildResD;
+        }
+        if (domainType === 9) {
+            var dangerFinal = barrowResD;
+        }
+        if (domainType === 10) {
+            var dangerFinal = cavernResD;
+        }
+        if (domainType === 11) {
+            var dangerFinal = frozenResD;
+        }
+        if (domainType === 14) {
+            var dangerFinal = pathResD;
+        }
+        if (domainType === 15) {
+            var dangerFinal = ruinResD;
+        }
+        if (domainType === 16) {
+            var dangerFinal = seaResD;
+        }
+        if (domainType === 17) {
+            var dangerFinal = marshResD;
+        }
+        if (domainType === 18) {
+            var dangerFinal = strongholdResD;
+        }
+        if (domainType === 19) {
+            var dangerFinal = darkResD;
+        }
+        if (domainType === 20) {
+            var dangerFinal = underResD;
+        }
+        if (domainType === 21) {
+            var dangerFinal = magmaResD;
+        }
+        if (domainType === 22) {
+            var dangerFinal = sunkenResD;
+        }
+        if (domainType === 23) {
+            var dangerFinal = skyboundResD;
+        }
+        if (domainType === 24) {
+            var dangerFinal = otherResD;
+        }
+        if (domainType === 25) {
+            var dangerFinal = techResD;
+        }
+    } else {
+        dangerFinal = "None.";
+    };
 
     if (gridX >= 3 && gridY >= 3) {
         var doorAccess = true;
     } else {
         var doorAccess = false;
     }
+
     if (doorAccess === true) {
         var northDoors = randomNumber(0, 2);
         var eastDoors = randomNumber(0, 2);
@@ -356,67 +706,19 @@ function genroom() {
     } else {
         var doorFinal = "No doors"
     }
+
     if (bossChance === 25) {
         var bossFinal = "⚠ This is a boss room!";
     } else {
         var bossFinal = "(No boss).";
     }
+
     if (monsterChance === 5) {
         var monsterFinal = "👹 Yes.";
     } else {
         var monsterFinal = "🙊 No."
     }
-    if (dangerChance === 3) {
-        var genDanRes = genericDangers[Math.floor(Math.random()*genericDangers.length)];
-        var genDanFinal = " " + genDanRes;
-        if (dungeonSetting === "volcanic") {
-            var volDanRes = volcanicDangers[Math.floor(Math.random()*volcanicDangers.length)];
-            var volDanFinal = " " + volDanRes;
-        } else {
-            var volDanFinal = "None";
-        }
-        if (dungeonSetting === "ice") {
-            var iceDanRes = iceDangers[Math.floor(Math.random()*iceDangers.length)];
-            var iceDanFinal = " " + iceDanRes;
-        } else {
-            var iceDanFinal = "None";
-        }
-        if (dungeonSetting === "desert") {
-            var desDanRes = desertDangers[Math.floor(Math.random()*desertDangers.length)];
-            var desDanFinal = " " + desDanRes;
-        } else {
-            var desDanFinal = "None";
-        }
-        if (dungeonSetting === "water") {
-            var watDanRes = waterDangers[Math.floor(Math.random()*waterDangers.length)];
-            var watDanFinal = " " + watDanRes;
-        } else {
-            var watDanFinal = "None";
-        }
-    } else {
-        genDanFinal = "None";
-        volDanFinal = "None";
-        iceDanFinal = "None";
-        desDanFinal = "None";
-        watDanFinal = "None";
-    }
-    if (poiChance === 3) {
-        if (poiCount === 1) {
-            var poi1Set = pois[Math.floor(Math.random()*pois.length)];
-            var poiFinal = ` ${poi1Set}`;
-        } else if (poiCount === 2) {
-            var poi1Set = pois[Math.floor(Math.random()*pois.length)];
-            var poi2Set = pois[Math.floor(Math.random()*pois.length)];
-            var poiFinal = ` ${poi1Set}, ${poi2Set}`;
-        } else if (poiCount === 3) {
-            var poi1Set = pois[Math.floor(Math.random()*pois.length)];
-            var poi2Set = pois[Math.floor(Math.random()*pois.length)];
-            var poi3Set = pois[Math.floor(Math.random()*pois.length)];
-            var poiFinal = ` ${poi1Set}, ${poi2Set}, ${poi3Set}`;
-        }
-    } else {
-        var poiFinal = "None"
-    }
+
     if (upstairsChance === 8) {
         var upstFinal = "↗ There is a staircase leading up.";
     } else {
@@ -433,21 +735,296 @@ function genroom() {
         var treasureFinal = "No visible treasure."
     }
 
-    // The print
-    document.getElementById("gen-text").innerText = `🔹 Boss Result: ${bossFinal}
-    🔹 Room Width: ${gridX}
-    🔹 Room Height: ${gridY}
-    🔹 Doors: ${doorFinal}
-    🔹 Points of Interest: ${poiFinal}
-    🔹 Monsters: ${monsterFinal}
-    🔹 Generic Dangers: ${genDanFinal}
-    🔹 Volcanic Dangers: ${volDanFinal}
-    🔹 Ice Dangers: ${iceDanFinal}
-    🔹 Desert Dangers: ${desDanFinal}
-    🔹 Water Dangers: ${watDanFinal}
-    🔹 Upstairs: ${upstFinal}
-    🔹 Downstairs: ${dnstFinal}
-    🔹 Treasure: ${treasureFinal}`;
+    // The print - OLD VER
+    // document.getElementById("gen-text").innerText = `👹 Boss Result: ${bossFinal}
+    // 📏 Room Width: ${gridX}
+    // 📏 Room Height: ${gridY}
+    // 🚪 Doors: ${doorFinal}
+    // 💬 Points of Interest: ${poiFinal}
+    // 👿 Monsters: ${monsterFinal}
+    // 🔥 Generic Dangers: ${genDanFinal}
+    // 📈 Upstairs: ${upstFinal}
+    // 📈 Downstairs: ${dnstFinal}
+    // 🥇 Treasure: ${treasureFinal}`;
+
+    if (domainType === 1) {
+        document.getElementById("gen-text").innerText = `Domain: Ancient
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${ancientResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 2) {
+        document.getElementById("gen-text").innerText = `Domain: Corrupted
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${corruptedResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 3) {
+        document.getElementById("gen-text").innerText = `Domain: Fortified
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${fortifiedResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 4) {
+        document.getElementById("gen-text").innerText = `Domain: Hallowed
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${hallowedResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 5) {
+        document.getElementById("gen-text").innerText = `Domain: Haunted
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${hauntedResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 6) {
+        document.getElementById("gen-text").innerText = `Domain: Infested
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${infestedResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 7) {
+        document.getElementById("gen-text").innerText = `Domain: Ravaged
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${ravagedResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 8) {
+        document.getElementById("gen-text").innerText = `Domain: Wild
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${wildResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 9) {
+        document.getElementById("gen-text").innerText = `Domain: Barrow
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${barrowResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 10) {
+        document.getElementById("gen-text").innerText = `Domain: Cavern
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${cavernResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 11) {
+        document.getElementById("gen-text").innerText = `Domain: Frozen Cave
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${frozenResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 14) {
+        document.getElementById("gen-text").innerText = `Domain: Mountain Path
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${pathResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 15) {
+        document.getElementById("gen-text").innerText = `Domain: Ruin
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${ruinResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 16) {
+        document.getElementById("gen-text").innerText = `Domain: Sea Cave
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${seaResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 17) {
+        document.getElementById("gen-text").innerText = `Domain: Marsh
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${marshResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 18) {
+        document.getElementById("gen-text").innerText = `Domain: Stronghold
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${strongholdResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 19) {
+        document.getElementById("gen-text").innerText = `Domain: Dark Woods
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${darkResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 20) {
+        document.getElementById("gen-text").innerText = `Domain: Under Dungeon
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${underResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 21) {
+        document.getElementById("gen-text").innerText = `Domain: Magma
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${magmaResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 22) {
+        document.getElementById("gen-text").innerText = `Domain: Sunken City
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${corruptedResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 23) {
+        document.getElementById("gen-text").innerText = `Domain: Skybound
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${skyboundResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 24) {
+        document.getElementById("gen-text").innerText = `Domain: Otherworldly
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${otherResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    } else if (domainType === 25) {
+        document.getElementById("gen-text").innerText = `Domain: Technological
+        👹 Boss Result: ${bossFinal}
+        📏 Room Width: ${gridX}
+        📏 Room Height: ${gridY}
+        🚪 Doors: ${doorFinal}
+        🗿 Domain Feature: ${techResF}
+        🦂 Domain Dangers: ${dangerFinal}
+        👿 Monsters: ${monsterFinal}
+        📈 Upstairs: ${upstFinal}
+        📈 Downstairs: ${dnstFinal}
+        🥇 Treasure: ${treasureFinal}`;
+    }
+    
 }
 
 // Town Generation
@@ -466,12 +1043,12 @@ function gentown() {
     }
 
     // The print
-    document.getElementById("gen-text").innerText = `🔹 Town Size: ${townSizeFinal}
-    🔹 Race Relations: ${raceRelFinal}
-    🔹 Ruler's Status: ${rulerFinal}
-    🔹 Notable Traits: ${notableFinal}
-    🔹 Known for: ${knownFor}
-    🔹 Current Calamity: ${calamityFinal}`;
+    document.getElementById("gen-text").innerText = `📐 Town Size: ${townSizeFinal}
+    👀 Race Relations: ${raceRelFinal}
+    👑 Ruler's Status: ${rulerFinal}
+    🌊 Notable Traits: ${notableFinal}
+    🍺 Known for: ${knownFor}
+    🌋 Current Calamity: ${calamityFinal}`;
 }
 
 // Settlement Generation
@@ -479,26 +1056,26 @@ function genstructure() {
     var structureType = randomNumber(1, 5)
     if (structureType === 1) {
         var residenceFinal = residences[Math.floor(Math.random()*residences.length)];
-        document.getElementById("gen-text").innerText = `🔹 Settlement Type: 🏠 Residence
+        document.getElementById("gen-text").innerText = `🌆 Settlement Type: 🏠 Residence
         🔹 Building Type: ${residenceFinal}`;
     } else if (structureType === 2) {
         var religiousFinal = religiouses[Math.floor(Math.random()*religiouses.length)];
-        document.getElementById("gen-text").innerText = `🔹 Settlement Type: 🛐 Religious Settlement
+        document.getElementById("gen-text").innerText = `🌆 Settlement Type: 🛐 Religious Settlement
         🔹 Building Type: ${religiousFinal}`;
     } else if (structureType === 3) {
         var tavFinal = tavType[Math.floor(Math.random()*tavType.length)];
         var tavNFinal1 = tavName1[Math.floor(Math.random()*tavName1.length)];
         var tavNFinal2 = tavName2[Math.floor(Math.random()*tavName2.length)];
-        document.getElementById("gen-text").innerText = `🔹 Settlement Type: 🍺 Tavern
-        🔹 Tavern Name: ${tavNFinal1} ${tavNFinal2}
+        document.getElementById("gen-text").innerText = `🌆 Settlement Type: 🍺 Tavern
+        💬 Tavern Name: ${tavNFinal1} ${tavNFinal2}
         🔹 Building Type: ${tavFinal}`;
     } else if (structureType === 4) {
         var wareFinal = warehouses[Math.floor(Math.random()*warehouses.length)];
-        document.getElementById("gen-text").innerText = `🔹 Settlement Type: 📦 Warehouse
+        document.getElementById("gen-text").innerText = `🌆 Settlement Type: 📦 Warehouse
         🔹 Building Type: ${wareFinal}`;
     } else if (structureType === 5) {
         var shopFinal = shopTypes[Math.floor(Math.random()*shopTypes.length)];
-        document.getElementById("gen-text").innerText = `🔹 Settlement Type: 🛒 Shop/Service
+        document.getElementById("gen-text").innerText = `🌆 Settlement Type: 🛒 Shop/Service
         🔹 Building Type: ${shopFinal}`;
     } else {
         document.getElementById("gen-text").innerText = `🟥 Error`;
@@ -528,17 +1105,17 @@ function npct() {
     }
 
     // The print
-    document.getElementById("gen-text").innerText = `Title: ${modifierResults} ${nounResults}
-    Feature: ${visualResults}
-    Motives: ${motive1Results}, ${motive2Results}
-    Race: ${raceResult}
-    Class: ${classResults}
-    Power Level: ${powerResults}
-    Strong Point: ${strengthResults}
-    Weak Point: ${weaknessResults}
-    Topic Focus: ${focusResults}
-    Attitude: ${tudeResults}
-    Alignment: ${alignResults}`;
+    document.getElementById("gen-text").innerText = `🚥 Personality Title: ${modifierResults} ${nounResults}
+    🔎 Feature: ${visualResults}
+    📜 Motives: ${motive1Results}, ${motive2Results}
+    😺 Race: ${raceResult}
+    🤺 Class: ${classResults}
+    🔥 Power Level: ${powerResults}
+    💪 Strong Point: ${strengthResults}
+    🥶 Weak Point: ${weaknessResults}
+    ❓ Topic Focus: ${focusResults}
+    🤨 Attitude: ${tudeResults}
+    ♎ Alignment: ${alignResults}`;
 }
 
 // Random Overworld Biome
@@ -559,9 +1136,9 @@ function weather() {
     var windResults = weatherWind[Math.floor(Math.random()*weatherWind.length)];
     var cloudResults = weatherClouds[Math.floor(Math.random()*weatherClouds.length)];
 
-    document.getElementById("gen-text").innerText = `Temperature: ${tempResults}
-    Wind: ${windResults}
-    Clouds: ${cloudResults}`;
+    document.getElementById("gen-text").innerText = `🌞 Temperature: ${tempResults}
+    💨 Wind: ${windResults}
+    ⛅ Clouds: ${cloudResults}`;
 }
 
 // Random item
@@ -622,11 +1199,11 @@ function easyBoss() {
         bossArmor = "None"
     }
 
-    document.getElementById("gen-text").innerText = `Gold: ${bossGold}
-    Items: ${bossItem1}, ${bossItem2}, ${bossItem3}
-    Armor: ${bossArmor}
-    Weapon: ${bossWeapon}
-    Treasure: ${bossTreasure}`;
+    document.getElementById("gen-text").innerText = `👛 Gold: ${bossGold}
+    🏆 Items: ${bossItem1}, ${bossItem2}, ${bossItem3}
+    🤖 Armor: ${bossArmor}
+    🤺 Weapon: ${bossWeapon}
+    🎁 Treasure: ${bossTreasure}`;
 }
 
 // Hard Boss Loot
@@ -653,11 +1230,11 @@ function hardBoss() {
         bossArmor = "None"
     }
 
-    document.getElementById("gen-text").innerText = `Gold: ${bossGold}
-    Items: ${bossItem1}, ${bossItem2}, ${bossItem3}, ${bossItem4}
-    Armor: ${bossArmor}
-    Weapon: ${bossWeapon}
-    Treasure: ${bossTreasure}, ${bossTreasure2}`;
+    document.getElementById("gen-text").innerText = `👛 Gold: ${bossGold}
+    🏆 Items: ${bossItem1}, ${bossItem2}, ${bossItem3}, ${bossItem4}
+    🤖 Armor: ${bossArmor}
+    🤺 Weapon: ${bossWeapon}
+    🎁 Treasure: ${bossTreasure}, ${bossTreasure2}`;
 }
 
 // Legendary Boss Loot
@@ -685,12 +1262,12 @@ function mythBoss() {
         bossArmor = "None"
     }
 
-    document.getElementById("gen-text").innerText = `Gold: ${bossGold}
-    Items: ${bossItem1}, ${bossItem2}, ${bossItem3}, ${bossItem4}
-    Armor: ${bossArmor}
-    Weapon: ${bossWeapon}
-    Treasure: ${bossTreasure}, ${bossTreasure2}
-    Legendary Prize: ${bossLegend}`;
+    document.getElementById("gen-text").innerText = `👛 Gold: ${bossGold}
+    🏆 Items: ${bossItem1}, ${bossItem2}, ${bossItem3}, ${bossItem4}
+    🤖 Armor: ${bossArmor}
+    🤺 Weapon: ${bossWeapon}
+    🎁 Treasure: ${bossTreasure}, ${bossTreasure2}
+    🌟 Legendary Prize: ${bossLegend}`;
 }
 
 // Test Buttons

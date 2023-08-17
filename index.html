@@ -3,58 +3,86 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <img src="https://github.com/TigerBonez/DunGenII/blob/main/dungenii.gif?raw=true">
+        <img src="dungenii.gif">
         <h1>Make your choice.</h1>
-        <div id="factDisplay"></div>
-        <div>---</div>
-        <h2 id="main-text">text</h2>
-        <h2 id="gen-text">Generation (Click one of the Gen buttons to generate something!)</h2>
-        <div>---</div>
+        <div id="factDisplay" title="Random quotes from Snapcube's Sonic The Hedgehog Live Fandub series."></div>
+        <br><div class="beddy">
+            <h2 id="main-text" title="Small randomly generated objects go here.">text</h2>
+        </div>
+        <div class="boxy">
+            <h2 id="gen-text" title="Fully generated rooms, NPCs, etc goes here.">Generation (Click one of the Gen buttons to generate something!)</h2>
+        </div>
+        <button id="copy-btn" onclick="copytext()" title="Copy the text in the big window to your clipboard." class="tinybutton">Copy</button>
         <p>[ Mechanics RNG ]</p>
-        <button id="oracle-btn" onclick="oracle()">Oracle</button>
-        <button id="Intervention-btn" onclick="intervent()">Interventions</button>
-        <button id="rwg-btn" onclick="rwg()">RWG</button>
-        <button id="expect-btn" onclick="expect()">Expects</button>
-        <br><button id="percep-btn" onclick="perception()">Perception</button>
-        <button id="trap-btn" onclick="trap()">Trap Detection</button>
-        <button id="travel-btn" onclick="travBiome()">World Biome</button>
-        <button id="cave-btn" onclick="cavBiome()">Cave Biome</button>
-        <br><button id="item-btn" onclick="genItem()">Rnd Item</button>
-        <button id="armor-btn" onclick="genArmor()">Rnd Armor</button>
-        <button id="weapon-btn" onclick="genWeapon()">Rnd Weapon</button>
-        <button id="treasure-btn" onclick="genTreasure()">Rnd Treasure</button>
-        <br><button id="easy-btn" onclick="easyTrap()">Normal Trap</button>
-        <button id="hard-btn" onclick="deadlyTrap()">Deadly Trap</button>
+        <button id="oracle-btn" onclick="oracle()" title="Ask the oracle something.">Oracle</button>
+        <button id="Intervention-btn" onclick="intervent()" title="Something intervenes with your quest!">Interventions</button>
+        <button id="rwg-btn" onclick="rwg()" title="A random word generator for any use.">RWG</button>
+        <button id="expect-btn" onclick="expect()" title="Ask the oracle, 'is everything as expected?', then resort to this if not.">Expects</button>
+        <br><button id="percep-btn" onclick="perception()" title="Make a perception check.">Perception</button>
+        <button id="trap-btn" onclick="trap()" title="Did you just trip a hidden trap? Use on anything you suspect to be a trap.">Trap Detection</button>
+        <button id="travel-btn" onclick="travBiome()" title="Generate a random overworld biome to explore.">World Biome</button>
+        <button id="cave-btn" onclick="cavBiome()" title="Generate a random underground biome to explore.">Cave Biome</button>
+        <br><button id="item-btn" onclick="genItem()" title="Random item.">Rnd Item</button>
+        <button id="armor-btn" onclick="genArmor()" title="Random armor.">Rnd Armor</button>
+        <button id="weapon-btn" onclick="genWeapon()" title="Random weapon.">Rnd Weapon</button>
+        <button id="treasure-btn" onclick="genTreasure()" title="Random treasure with effects.">Rnd Treasure</button>
+        <br><button id="easy-btn" onclick="easyTrap()" title="Generate a less deadly trap to fall for!">Normal Trap</button>
+        <button id="hard-btn" onclick="deadlyTrap()" title="Generate a deadly trap to fall for!">Deadly Trap</button>
         <!-- Gen buttons -->
-        <div>---</div>
         <p>[ Generate Things ]</p>
-        <button id="room-btn" onclick="genroom()">Gen Room</button>
-        <button id="town-btn" onclick="gentown()">Gen Town</button>
-        <button id="struct-btn" onclick="genstructure()">Gen Structure</button>
-        <br><button id="npc-btn" onclick="npct()">Gen NPC</button>
-        <button id="weather-btn" onclick="weather()">Gen Weather</button>
+        <button id="journey-btn" onclick="journeygen()" title="Generate a journey to a checkpoint. Run an intervention at each checkpoint, unless you've reached your destination.">⭐Journey On!⭐</button>
+        <br><button id="room-btn" onclick="genroom()" title="Generate a dungeon room as you explore the dungeon!">🏰Dungeon Room🏰</button>
+        <br><button id="town-btn" onclick="gentown()" title="Generate an entire settlement.">Gen Town</button>
+        <button id="struct-btn" onclick="genstructure()" title="Generate a structure in a town or other place.">Gen Structure</button>
+        <br><button id="npc-btn" onclick="npct()" title="Generate a random fleshed out NPC.">Gen NPC</button>
+        <button id="weather-btn" onclick="weather()" title="Generate weather conditions.">Gen Weather</button>
         <!-- Boss buttons -->
-        <div>---</div>
         <p>[ Generate Boss Loot based on Difficulty ]</p>
         
-        <button id="boss-btn" onclick="easyBoss()">Normal Boss</button>
-        <button id="boss-btn" onclick="hardBoss()">Hard Boss</button>
-        <button id="boss-btn" onclick="mythBoss()">Legendary Boss</button>
+        <button id="boss-btn" onclick="easyBoss()" title="Loot for an easy boss, typically found at the end of small dungeons.">Normal Boss</button>
+        <button id="boss-btn" onclick="hardBoss()" title="Loot for a hard boss, usually found at the end of important dungeons and story points.">Hard Boss</button>
+        <button id="boss-btn" onclick="mythBoss()" title="Loot for a legendary boss, usually the BBEG or a secret very hard boss fight somewhere.">Legendary Boss</button>
+        <!-- Dungeon Domains -->
+        <p>[ Please select a Dungeon Domain for your room generation! ]</p>
+        <p class="tinyText">Domains based on Ironsworn RPG</p>
+
+        <button id="boss-btn" onclick="domainAncient()" class="tinybutton" title="This place holds the secrets of a bygone age.">Ancient</button>
+        <button id="boss-btn" onclick="domainCorrupted()" class="tinybutton" title="This place is tainted by dark magic.">Corrupted</button>
+        <button id="boss-btn" onclick="domainFortified()" class="tinybutton" title="Foes defend this place against intruders.">Fortified</button>
+        <button id="boss-btn" onclick="domainHallowed()" class="tinybutton" title="The faithful worship here.">Hallowed</button>
+        <button id="boss-btn" onclick="domainHaunted()" class="tinybutton" title="Restless spirits are bound to this place.">Haunted</button>
+        <button id="boss-btn" onclick="domainInfested()" class="tinybutton" title="Foul creatures dwell here.">Infested</button>
+        <button id="boss-btn" onclick="domainRavaged()" class="tinybutton" title="Time, disaster, or strife have taken their toll.">Ravaged</button>
+        <button id="boss-btn" onclick="domainWild()" class="tinybutton" title="Nature prevails in this place.">Wild</button>
+        <button id="boss-btn" onclick="domainBarrow()" class="tinybutton" title="The dead are enshrined here.">Barrow</button>
+        <button id="boss-btn" onclick="domainCavern()" class="tinybutton" title="A place of stone and darkness.">Cavern</button>
+        <button id="boss-btn" onclick="domainFrozenCavern()" class="tinybutton" title="A place of deep caves and enduring cold.">Frozen Cave</button>
+        <button id="boss-btn" onclick="domainPass()" class="tinybutton" title="Treacherous paths over high mountains.">Mountain Path</button>
+        <button id="boss-btn" onclick="domainRuin()" class="tinybutton" title="The crumbling legacy of a dead civilization.">Ruins</button>
+        <button id="boss-btn" onclick="domainSeaCave()" class="tinybutton" title="Stone passages carved by ocean waves.">Sea Cave</button>
+        <button id="boss-btn" onclick="domainMarsh()" class="tinybutton" title="A primeval marsh, cloaked in mist.">Marsh</button>
+        <button id="boss-btn" onclick="domainStronghold()" class="tinybutton" title="A fortress secured against trespassers.">Stronghold</button>
+        <button id="boss-btn" onclick="domainDarkWoods()" class="tinybutton" title="A perilous forest of eternal shadow.">Dark Woods</button>
+        <button id="boss-btn" onclick="domainUnderDungeon()" class="tinybutton" title="An age-old subterranean dungeon.">Under Dungeon</button>
+        <button id="boss-btn" onclick="domainMagma()" class="tinybutton" title="A place of raging fire and stone.">Magma</button>
+        <button id="boss-btn" onclick="domainSunken()" class="tinybutton" title="That of which was swallowed by the embrace of the oceans.">Sunken City</button>
+        <button id="boss-btn" onclick="domainSkybound()" class="tinybutton" title="A fantastical location high in the sky.">Skybound</button>
+        <button id="boss-btn" onclick="domainOtherworldly()" class="tinybutton" title="A place from outside the realm of our normal world.">Otherworldly</button>
+        <button id="boss-btn" onclick="domainTechnological()" class="tinybutton" title="A place of advanced technology beyond most's comprehension.">Technological</button>
+
+
         <!-- Bottom Stuff -->
-        <div>---</div>
-        <p>[ Set Dungeon Biome ]</p>
-        <form>
-            <label for="dunbio">Dungeon Biome:</label>
-            <select name="DunOps" id="dunbio">
-                <option value="volcanic">Volcanic</option>
-                <option value="ice">Ice</option>
-                <option value="desert">Desert</option>
-                <option value="water">Water</option>
-                <option value="none">(None)</option>
-            </select>
-        </form>
-        <button type="button" id="assholes" onclick="assholes()">Submit</button>
-        <p class="footer">Made by TigerBonez | ⭐ = Original Magic Item, 🌌 = Vanilla Magic Item</p>
+        <div>-</div>
+        <div class="creddy">
+        <p>Credits and such</p>
+        <p class="tinyText">There are some elements here present from <a href="https://homebrewery.naturalcrit.com/print/1oIHExK3jhMfOTivJdIBg_tsgs8B0YDnPX-LxFM5Ksg9t" target="_blank">🚗 Explorer's guide to the Masquerade</a>, which includes modern-day
+        <br>objects. You can choose to ignore these if they don't fit your campaign.
+        <br><a href="https://www.ironswornrpg.com/" target="_blank">🔨 Ironsworn</a> elements are also used.
+        <br>Credits to the D&D 5e Player's Handbook, Dungeon Master's Guide, and Monster Manual for some elements and inspiration.
+        <br>Creidts to <a href="https://homebrewery.naturalcrit.com/share/rkmo0t9k4Q" target="_blank">MUNE (A solo D&D DM emulator)</a> for the Oracle system.
+        <br>Shoutout to <a href="https://www.youtube.com/@MeMyselfandDieRPG" target="_blank">Trevor Devall of Me, Myself, and Die</a> for inspiring this whole thing.</p>
+        </div>
+        <p class="footer">🐱‍👤 Made by <a href="https://github.com/TigerBonez" target="_blank">Tigerbonez</a> | Dungen 0.3.0.0</p>
         <script src="index.js"></script>
     </body>
 </html>
