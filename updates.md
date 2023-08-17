@@ -1,3 +1,6 @@
+v.0.3.0.1
+- Changed some UI elements, such as making the bottom of the credits clickable, and giving an emphasis on the Oracle and Random Word Generator buttons
+
 v.0.3.0.0
 - Put boxes around and fixed the formatting of the main text boxes in which generated things go
 - Added a copy button to copy text from the big text box
